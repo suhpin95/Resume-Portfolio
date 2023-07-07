@@ -9,7 +9,7 @@ import {
 
 const TechSkills = () => {
   return (
-    <ul className={s.container}>
+    <section className={s.container}>
       <a href={'https://developer.mozilla.org/en-US/docs/Web/JavaScript'} className={s.techIcon} target = {"_blank"} >
         <DiJavascript1  />
       </a>
@@ -55,7 +55,7 @@ const TechSkills = () => {
       <a href={'https://docs.github.com/en'} className={s.techIcon} target={"_blank"}>
         <DiGit />
       </a>
-    </ul>
+    </section>
   );
 };
 
