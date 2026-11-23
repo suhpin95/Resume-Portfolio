@@ -10,8 +10,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const resumeLink =
-  'https://raw.githubusercontent.com/suhpin95/suhpin95/master/Suhas_Pindiproli_Resume.pdf';
+const resumeLink = `${process.env.PUBLIC_URL}/Suhas_Pindiproli_Sr_SWE_Resume.pdf`;
 
 
 const Resume = () => {
