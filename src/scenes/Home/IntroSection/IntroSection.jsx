@@ -18,15 +18,13 @@ const IntroSection = () => {
 
           <aside className={s.description}>
             <span>
-              Experienced <i className={s.purple}>Full Stack Developer</i> with a passion for crafting robust and scalable web applications.
-              With a solid background in both front-end and back-end development,
-              I bring a holistic approach to building dynamic and user-friendly solutions.
-              Proficient in a wide range of technologies, including <i className={s.purple}>HTML, CSS, JavaScript, React.js, Node.js, Express.js, and SQL.</i>
+              <i className={s.purple}>Senior Backend Engineer</i> with 6+ years of experience building distributed platform services in Java.
+              I have delivered event-driven systems processing <i className={s.purple}>7,500+ transactions per second</i>, OAuth2 authorization
+              platforms, and Kafka and Kubernetes infrastructure with observability across 20+ services.
               <br/>
-              I thrive in agile environments and excel at collaborating with cross-functional teams. With a strong focus on delivering
-              high-quality code and exceptional user experiences, I am dedicated to continuous learning and staying up-to-date with
-              the latest industry trends. Whether it's designing intuitive user interfaces or architecting efficient server-side systems,
-              I strive to create innovative solutions that drive business growth. Let's build something amazing together.
+              My recent work spans high-throughput ingestion, identity and security, Azure infrastructure, OpenTelemetry, and
+              distributed <i className={s.purple}>Go and LLM inference systems</i>. I enjoy solving reliability problems and turning
+              complex platform requirements into practical, observable services.
             </span>
 
 
