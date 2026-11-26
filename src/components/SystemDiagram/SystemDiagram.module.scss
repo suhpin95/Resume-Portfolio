@@ -1,0 +1,142 @@
+@use "../../styles/keyframes";
+
+.wrap {
+  margin: 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--paper-raised);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.label,
+.status,
+.legend {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.label {
+  color: var(--muted);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent);
+}
+
+.dot {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  animation: pulse-node 2.4s ease-in-out infinite;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  padding: 1rem 0.5rem 0.4rem;
+}
+
+.grid line {
+  stroke: var(--grid);
+  stroke-width: 1;
+}
+
+.edges path {
+  fill: none;
+  stroke: var(--rule-strong);
+  stroke-width: 1.1;
+}
+
+.edges .async {
+  stroke-dasharray: 3 4;
+  stroke: var(--accent);
+  opacity: 0.55;
+}
+
+.nodes rect {
+  fill: var(--paper);
+  stroke: var(--rule-strong);
+  stroke-width: 1;
+}
+
+.nodes text {
+  fill: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.02em;
+}
+
+.nodes .sub {
+  fill: var(--muted);
+  font-size: 7px;
+}
+
+.nodes .primary rect {
+  fill: var(--ink);
+  stroke: var(--ink);
+}
+
+.nodes .primary text {
+  fill: var(--paper);
+}
+
+.nodes .primary .sub {
+  fill: var(--paper);
+  opacity: 0.68;
+}
+
+.packets circle {
+  fill: var(--accent);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.1rem;
+  padding: 0.8rem 1.1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+}
+
+.legend span::before {
+  content: "·";
+  margin-right: 0.35rem;
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+
+  .packets {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .svg {
+    padding-inline: 0;
+  }
+
+  .legend {
+    font-size: 0.56rem;
+  }
+}

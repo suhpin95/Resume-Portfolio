@@ -1,27 +1,65 @@
 .container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 2rem;
 }
 
-.techIcon {
-  font-size: 4rem;
-  margin: 15px;
-  padding: 2rem 4rem;
-  opacity: 0.93;
-  border: 1.7px solid rgba(200, 137, 230, 0.637);
-  vertical-align: middle;
-  text-align: center;
-  border-radius: 5px;
-  display: table;
-  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
-  overflow: hidden;
-  transition: all 0.4s ease 0s;
-  line-height: 0;
+.group {
+  min-width: 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  background: var(--paper-raised);
+}
 
-  &:hover {
-    transform: scale(1.05);
-    overflow: hidden;
-    border: 2.2px solid rgba(197, 115, 230, 0.883);
+.group h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.icon svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.group li {
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
   }
 }

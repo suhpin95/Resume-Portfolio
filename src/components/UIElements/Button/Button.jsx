@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import s from './Button.module.scss';
 
 const Button = ({
@@ -11,15 +11,20 @@ const Button = ({
   target,
   style,
   addClass,
-  label
+  label,
+  variant = 'primary',
 }) => {
+  const classes = classNames(s.button, s[variant], className, addClass);
+
   if (href) {
     return (
       <a
         style={style}
-        className={cx(s.btn, s[className], addClass)}
+        className={classes}
         href={href}
         target={target}
+        rel={target === '_blank' ? 'noreferrer' : undefined}
+        aria-label={label}
       >
         {children}
       </a>
@@ -29,7 +34,7 @@ const Button = ({
   return (
     <button
       style={style}
-      className={cx(s.btn, s[className], addClass)}
+      className={classes}
       type={type}
       onClick={onClick}
       disabled={disabled}

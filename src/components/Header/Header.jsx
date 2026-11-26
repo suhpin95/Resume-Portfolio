@@ -1,27 +1,28 @@
-import cx from 'classnames';
-import s from './Header.module.scss';
+import classNames from 'classnames';
 import { useEffect, useState } from 'react';
+import MainNavigation from '../Navigation/MainNavigation/MainNavigation';
+import s from './Header.module.scss';
 
-const Header = ({ children }) => {
-  const [headerHighlight, setHeaderHighlight] = useState(false);
+const Header = () => {
+  const [highlighted, setHighlighted] = useState(false);
 
   useEffect(() => {
-    const scrollHandler = () => {
-      setHeaderHighlight(window.scrollY >= 20);
-    };
-
-    window.addEventListener('scroll', scrollHandler);
-    return () => window.removeEventListener('scroll', scrollHandler);
+    const onScroll = () => setHighlighted(window.scrollY > 18);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <div
-      className={cx(s.header, {
-        [s.highlighted]: headerHighlight,
+    <header
+      className={classNames(s.header, {
+        [s.highlighted]: highlighted,
       })}
     >
-      <div className={s.container}>{children}</div>
-    </div>
+      <div className={s.inner}>
+        <MainNavigation />
+      </div>
+    </header>
   );
 };
 

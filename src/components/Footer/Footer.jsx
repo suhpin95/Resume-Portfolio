@@ -1,44 +1,56 @@
-import s from './Footer.module.scss';
 import { AiFillGithub } from 'react-icons/ai';
-import { FaLinkedinIn } from 'react-icons/fa';
-import user from "../../data/userOptions";
+import { FaLinkedinIn } from 'react-icons/fa6';
+import { Link } from 'react-router';
+import user from '../../data/userOptions';
+import s from './Footer.module.scss';
+
 const Footer = () => {
+  const year = new Date().getFullYear();
 
   return (
-    <div className={s.footer}>
-      <div className={s.container}>
-        <div className={s.copyright}>
-          <h1>Made with ❤️ by Suhas Pindiproli</h1>
+    <footer className={s.footer}>
+      <div className={s.inner}>
+        <div className={s.top}>
+          <div className={s.identity}>
+            <Link to="/" className={s.name}>
+              Suhas Pindiproli
+            </Link>
+            <p className={s.tagline}>Distributed systems &amp; AI platforms.</p>
+          </div>
+
+          <nav className={s.nav} aria-label="Footer navigation">
+            <Link to="/work">Work</Link>
+            <Link to="/about">About</Link>
+            <Link to="/resume">Resume</Link>
+          </nav>
+
+          <div className={s.socials}>
+            <a
+              href={user.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub profile"
+            >
+              <AiFillGithub aria-hidden="true" />
+            </a>
+            <a
+              href={user.linkedIn}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn profile"
+            >
+              <FaLinkedinIn aria-hidden="true" />
+            </a>
+          </div>
         </div>
 
-        <div className={s.body}>
-          <ul className={s.socialIcons}>
-            <li>
-              <a
-                href={user.github}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="github"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-
-
-            <li>
-              <a
-                href={user.linkedIn}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="linkedin"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-          </ul>
+        <div className={s.bottom}>
+          <span>© {year} Suhas Pindiproli</span>
+          <span>Santa Clara, California</span>
+          <span className={s.built}>Built with Bun + Vite</span>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

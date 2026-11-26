@@ -1,34 +1,28 @@
+import { NavLink } from 'react-router';
 import s from './NavLinks.module.scss';
-import {
-  AiOutlineHome,
-  AiOutlineUser,
-} from 'react-icons/ai';
-import { CgFileDocument } from 'react-icons/cg';
-import { routes } from '../../../routes/BaseRoutes';
-import { NavLink } from 'react-router-dom';
 
-const NavLinks = () => {
+const links = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/work', label: 'Work' },
+  { to: '/about', label: 'About' },
+  { to: '/resume', label: 'Resume' },
+];
+
+const NavLinks = ({ onNavigate, className = '' }) => {
   return (
-    <ul className={s.navBar}>
-      <li>
-        <NavLink to={routes.HOME} end>
-          <AiOutlineHome />
-          Home
-        </NavLink>
-      </li>
-
-      <li>
-        <NavLink to={routes.ABOUT}>
-          <AiOutlineUser />
-          About
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={routes.RESUME}>
-          <CgFileDocument />
-          Resume
-        </NavLink>
-      </li>
+    <ul className={`${s.links} ${className}`.trim()}>
+      {links.map((link) => (
+        <li key={link.to}>
+          <NavLink
+            to={link.to}
+            end={link.end}
+            onClick={onNavigate}
+            className={({ isActive }) => `${s.link} ${isActive ? s.active : ''}`.trim()}
+          >
+            <span>{link.label}</span>
+          </NavLink>
+        </li>
+      ))}
     </ul>
   );
 };
