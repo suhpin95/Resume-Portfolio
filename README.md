@@ -1,28 +1,16 @@
-# Suhas Pindiproli — Portfolio
+# Suhas Pindiproli - Portfolio
 
-Personal portfolio for **Suhas Pindiproli**, a senior software engineer focused on
-distributed systems and AI platforms.
+Personal portfolio for **Suhas Pindiproli**, a senior software engineer focused on distributed systems and AI platforms.
 
 Live site: <https://suhas-pindiproli.netlify.app/>
 
 ## Stack
 
-- **Bun** for package management and scripts
-- **Vite 8** for the build
-- **React 19**
-- **React Router 8**
-- **SCSS + CSS Modules**
-- **Netlify** for hosting and serverless functions
-- **Biome** for linting and formatting
-- **Vitest** for tests
-
-## Requirements
-
-- [Bun](https://bun.sh/) 1.4+
-- Node.js 22.12+ (used by Vite and Netlify Functions)
-
-The repository pins the expected versions in `.bun-version`, `.nvmrc`, and
-`.node-version`.
+- Bun 1.4+ and Node.js 22.12+
+- Vite 8, React 19, and React Router 8
+- SCSS Modules and Biome
+- Netlify hosting and Functions
+- Vitest
 
 ## Getting started
 
@@ -35,46 +23,38 @@ bun run dev
 
 Open <http://localhost:5173>.
 
-### Scripts
-
 | Command | Description |
 | --- | --- |
-| `bun run dev` | Start the Vite dev server |
-| `bun run build` | Build the production site into `dist/` |
+| `bun run dev` | Start the Vite development server |
+| `bun run build` | Create the production site in `dist/` |
 | `bun run preview` | Preview the production build |
 | `bun run lint` | Run Biome checks |
 | `bun run format` | Format with Biome |
-| `bun run test` | Run the Vitest suite |
-| `bun run check` | Lint, test, and build |
+| `bun run test` | Run Vitest |
+| `bun run check` | Run lint, tests, and the production build |
 
-## Netlify deployment
 
-Netlify is configured in `netlify.toml`:
+## Deployment
 
-- Build command: `bun install --frozen-lockfile && bun run build`
-- Publish directory: `dist`
-- Node 22 and Bun 1.4.5 are pinned for the build environment
-- All routes fall back to `index.html` for client-side routing
+Netlify reads `netlify.toml` for the Bun install/build command, `dist` publish directory, function location, API rewrite, SPA fallback, and security headers. Pushes to the production branch deploy the site; pull requests receive deploy previews.
 
-Push to `main` to deploy. Pull requests and branches get Netlify deploy previews.
+To reproduce the production build locally:
 
-## Project structure
-
-```text
-public/            static assets, resume PDF, favicons
-src/
-  components/      reusable UI
-  data/            profile, projects, experience, skills
-  hooks/           theme, GitHub data, reveal, media queries
-  layouts/         shared page shells
-  routes/          route configuration
-  scenes/          route-level pages
-  styles/          global SCSS, tokens, animations
-netlify/functions/ Netlify Functions
+```bash
+bun install --frozen-lockfile
+bun run check
 ```
+
+To test the Netlify function and production configuration locally, install the [Netlify CLI](https://docs.netlify.com/cli/get-started/) and run:
+
+```bash
+netlify dev
+netlify build
+```
+
+The GitHub function calls the public GitHub API without credentials. Set `GITHUB_TOKEN` in the Netlify environment only if you need authenticated API rate limits; do not commit the token. If live repository data cannot be retrieved, the UI explicitly reports that it is showing the saved snapshot.
+
 
 ## Migration notes
 
-This site was migrated from Create React App and npm to Vite, React 19, React
-Router 8, and Bun. The old CRA service worker, `node-sass`, `react-pdf`,
-`react-tsparticles`, and the npm lockfile were removed.
+The app migrated from Create React App and npm to Vite, React 19, React Router 8, and Bun. The npm lockfile and CRA service-worker setup were removed; `bun.lock` is the package lockfile. JavaScript and JSX remain in use, with `jsconfig.json` and JSDoc typedefs for editor support. Sass is built by Vite, and the resume remains a static public asset.
