@@ -32,3 +32,4 @@ bun-debug.log*
 
 .idea
 /docs/
+/bun.lock
