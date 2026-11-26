@@ -11,7 +11,7 @@ const links = [
 const NavLinks = ({ onNavigate, className = '' }) => {
   return (
     <ul className={`${s.links} ${className}`.trim()}>
-      {links.map((link, index) => (
+      {links.map((link) => (
         <li key={link.to}>
           <NavLink
             to={link.to}
@@ -19,9 +19,6 @@ const NavLinks = ({ onNavigate, className = '' }) => {
             onClick={onNavigate}
             className={({ isActive }) => `${s.link} ${isActive ? s.active : ''}`.trim()}
           >
-            <span className={s.index} aria-hidden="true">
-              0{index + 1}
-            </span>
             <span>{link.label}</span>
           </NavLink>
         </li>

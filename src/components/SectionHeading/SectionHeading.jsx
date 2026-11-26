@@ -4,7 +4,7 @@ const SectionHeading = ({ index, eyebrow, title, description, action }) => {
   return (
     <header className={s.heading}>
       <div className={s.meta}>
-        <span className={s.index}>{index}</span>
+        {index && <span className={s.index}>{index}</span>}
         <span className="eyebrow">{eyebrow}</span>
       </div>
 

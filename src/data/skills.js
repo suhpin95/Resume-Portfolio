@@ -58,10 +58,10 @@ const skills = [
     group: 'Observability',
     items: [
       'OpenTelemetry',
+      'Elasticsearch and Kibana for distributed tracing',
       'Prometheus',
       'Grafana',
       'ELK',
-      'Distributed tracing',
       'Incident response',
     ],
   },

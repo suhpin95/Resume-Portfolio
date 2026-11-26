@@ -3,7 +3,7 @@ const experience = [
     company: 'LexisNexis Risk Solutions',
     location: 'Santa Clara, CA',
     role: 'Senior Software Engineer',
-    period: 'Jun 2026 — Present',
+    period: 'Jun 2026 - Present',
     current: true,
     summary:
       'Leading high-throughput ingestion and identity platform work for financial risk-assessment services.',
@@ -26,7 +26,7 @@ const experience = [
     company: 'LexisNexis Risk Solutions',
     location: 'Santa Clara, CA',
     role: 'Software Engineer',
-    period: 'Feb 2024 — Jun 2026',
+    period: 'Feb 2024 - Jun 2026',
     summary:
       'Built and operated a multi-tenant authorization platform on Azure Kubernetes Service.',
     highlights: [
@@ -50,7 +50,7 @@ const experience = [
     company: 'SellYourCar Inc',
     location: 'San Diego, CA',
     role: 'Software Engineer',
-    period: 'Dec 2023 — Feb 2024',
+    period: 'Dec 2023 - Feb 2024',
     summary:
       'Connected external automotive data providers to real-time inventory and customer workflows.',
     highlights: [
@@ -63,7 +63,7 @@ const experience = [
     company: 'NanoCellect Biomedical',
     location: 'San Diego, CA',
     role: 'Software Development Engineer Intern',
-    period: 'Jul 2022 — Dec 2022',
+    period: 'Jul 2022 - Dec 2022',
     summary:
       'Improved data services for critical inventory operations in a biomedical instrumentation platform.',
     highlights: [
@@ -75,7 +75,7 @@ const experience = [
     company: 'Zensar Technologies',
     location: 'Pune, India',
     role: 'Software Engineer',
-    period: 'Oct 2018 — May 2021',
+    period: 'Oct 2018 - May 2021',
     summary:
       'Helped decompose a monolithic retail platform into independently deployable services.',
     highlights: [

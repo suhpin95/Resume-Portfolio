@@ -11,7 +11,6 @@ const SelectedWork = () => {
     <section className={`section ${s.section}`} aria-labelledby="work-title">
       <div className="container">
         <SectionHeading
-          index="02"
           eyebrow="Selected work"
           title={<span id="work-title">Case studies in reliability.</span>}
           description="Platform work described by the problem, the tradeoffs, and what changed in production."

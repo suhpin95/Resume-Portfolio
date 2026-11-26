@@ -13,7 +13,7 @@ const profile = {
   hero: {
     eyebrow: 'Senior Software Engineer · Distributed Systems × AI',
     title: ['Reliable systems.', 'Intelligent workloads.'],
-    lede: 'I build distributed platform services and AI infrastructure — the kind of systems that stay observable, secure, and correct when traffic, tenants, and model workloads arrive at the same time.',
+    lede: 'I build distributed platform services and AI infrastructure - the kind of systems that stay observable, secure, and correct when traffic, tenants, and model workloads arrive at the same time.',
     secondary:
       '6+ years across high-throughput ingestion, identity and authorization, Kafka and Kubernetes platforms, OpenTelemetry, and LLM serving.',
   },
@@ -68,8 +68,14 @@ const profile = {
     {
       title: 'Observability',
       description:
-        'Metrics, traces, and logs that make distributed behavior legible — plus the runbooks and replay tools to recover quickly.',
-      tags: ['OpenTelemetry', 'Prometheus', 'ELK', 'Incident response'],
+        'Metrics, traces, and logs that make distributed behavior legible, including Elasticsearch and Kibana for distributed tracing, plus the runbooks and replay tools to recover quickly.',
+      tags: [
+        'OpenTelemetry',
+        'Elasticsearch and Kibana tracing',
+        'Prometheus',
+        'ELK',
+        'Incident response',
+      ],
     },
   ],
   currently: {

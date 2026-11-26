@@ -8,7 +8,7 @@ const Contact = () => {
     <section className={`section ${s.section}`} aria-labelledby="contact-title">
       <div className={`container ${s.inner}`}>
         <Reveal className={s.copy}>
-          <span className="eyebrow">04 — Contact</span>
+          <span className="eyebrow">Contact</span>
           <h2 id="contact-title" className={s.title}>
             Building something
             <br />

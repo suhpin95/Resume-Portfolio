@@ -42,12 +42,6 @@
   transform-origin: left;
 }
 
-.index {
-  color: var(--accent);
-  font-size: 0.58rem;
-  letter-spacing: 0.04em;
-}
-
 @media (max-width: 860px) {
   .links {
     flex-direction: column;
@@ -62,11 +56,6 @@
     letter-spacing: -0.02em;
     text-transform: none;
     color: var(--ink);
-  }
-
-  .index {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
   }
 
   .link::after {

@@ -8,7 +8,6 @@ const FocusAreas = () => {
     <section className={`section ${s.section}`} aria-labelledby="focus-title">
       <div className="container">
         <SectionHeading
-          index="01"
           eyebrow="What I work on"
           title={
             <span id="focus-title">
@@ -17,7 +16,7 @@ const FocusAreas = () => {
               under real load.
             </span>
           }
-          description="Four areas I keep coming back to — the places where correctness, performance, and operability meet."
+          description="Four areas I keep coming back to - the places where correctness, performance, and operability meet."
         />
 
         <ul className={s.grid}>

@@ -1,39 +1,40 @@
-import { ImPointRight } from 'react-icons/im';
 import s from './AboutTextCard.module.scss';
 
-const AboutTextCard = () => {
-  return (
-    <div className={s.card}>
-      <p style={{ textAlign: 'justify' }}>
-        Hi Everyone, I am <span className={s.purple}>Suhas Pindiproli </span>
-        from <span className={s.purple}> Santa Clara, CA.</span>
-        <br />
-        Senior backend engineer specializing in distributed systems and AI platforms{' '}
-        <br />
-        in Java and Go.
-        <br />
-        <br />I hold a Bachelor's degree in Computer Science from Savitribai Phule Pune
-        University, India.
-        <br />I also hold a Master's degree in Computer Science from San Diego State
-        University.
-        <br />
-        <br />
-        Apart from coding, some other activities that I love to do!
-      </p>
+const principles = [
+  {
+    title: 'Design for failure',
+    description:
+      'Bounded retries, backpressure, circuit breakers, and clear recovery paths belong in the design, not in the incident postmortem.',
+  },
+  {
+    title: 'Make behavior visible',
+    description:
+      'Metrics, traces, and structured logs should explain what the system is doing and help a team decide what to do next.',
+  },
+  {
+    title: 'Protect the boundaries',
+    description:
+      'Strong service contracts, tenant isolation, and deliberate identity controls keep fast-moving platforms dependable.',
+  },
+];
 
-      <ul>
-        <li className={s.aboutActivity}>
-          <ImPointRight /> Playing Soccer
+const AboutTextCard = () => (
+  <section className={s.card} aria-labelledby="principles-title">
+    <p className="eyebrow">Engineering perspective</p>
+    <h2 id="principles-title">The work is not done when it ships.</h2>
+    <p className={s.intro}>
+      I enjoy the point where architecture meets operations: taking a platform from a
+      promising design to something teams can run, observe, and trust.
+    </p>
+    <ul className={s.principles}>
+      {principles.map((principle) => (
+        <li key={principle.title}>
+          <strong>{principle.title}</strong>
+          <span>{principle.description}</span>
         </li>
-        <li className={s.aboutActivity}>
-          <ImPointRight /> Reading
-        </li>
-        <li className={s.aboutActivity}>
-          <ImPointRight /> Travelling
-        </li>
-      </ul>
-    </div>
-  );
-};
+      ))}
+    </ul>
+  </section>
+);
 
 export default AboutTextCard;
