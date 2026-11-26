@@ -1,0 +1,104 @@
+.section {
+  margin-top: clamp(4rem, 8vw, 7rem);
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.heading h2 {
+  margin-top: 0.6rem;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+.heading > a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.snapshotNote {
+  margin-top: 1.2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  background: var(--paper-raised);
+}
+
+.cardTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.cardTop h3 {
+  overflow-wrap: anywhere;
+  font-family: var(--font-mono);
+  font-size: 0.83rem;
+  letter-spacing: 0;
+}
+
+.cardTop a:hover {
+  color: var(--accent-strong);
+}
+
+.cardTop > span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+}
+
+.description {
+  flex: 1;
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.topics li {
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.7rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+}
