@@ -1,26 +1,20 @@
-import { useMemo } from 'react';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import s from './BtnToggleTheme.module.scss';
-import Button from '../UIElements/Button/Button';
-import ToggleLightIcon from '../../assets/toggle-light.svg?react';
-import ToggleDarkIcon from '../../assets/toggle-dark.svg?react';
 import { useThemeContext } from '../../hooks/themeHook/themeHook';
 
-const BtnToggleTheme = ({ className }) => {
+const BtnToggleTheme = ({ className = '' }) => {
   const { dark, toggleTheme } = useThemeContext();
 
-  const ToggleThemeIcon = useMemo(
-    () => (dark ? ToggleDarkIcon : ToggleLightIcon),
-    [dark],
-  );
-
   return (
-    <Button
-      addClass={className}
+    <button
+      type="button"
       onClick={toggleTheme}
-      label="theme toggle"
+      className={`${s.toggle} ${className}`.trim()}
+      aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+      title={dark ? 'Switch to light theme' : 'Switch to dark theme'}
     >
-      <ToggleThemeIcon className={s.toggleTheme} />
-    </Button>
+      {dark ? <FiSun aria-hidden="true" /> : <FiMoon aria-hidden="true" />}
+    </button>
   );
 };
 

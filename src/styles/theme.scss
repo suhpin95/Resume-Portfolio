@@ -1,57 +1,68 @@
-.light {
-  --txt: #000;
-  --txt-secondary: #cd5ff8;
-  --txt-sec-darker: #cd5ff8;
-  --bg-layout-home: linear-gradient(307deg, transparent 0%, transparent 57%, #ffffff 57%, #f8f8f8 100%), linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
-  --bg-home-section-main: none;
-  --bg-layout-base: linear-gradient(307deg, transparent 0%, transparent 57%, #ffffff 57%, #f8f8f8 100%), linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
-  --bg-primary: #fafafa;
-  --bg: #623686;
-  --bg-active: rgba(109,32,197,.84);
-  --bg-header: transparent;
-  --bg-footer: transparent;
-  --backdrop: rgba(0, 0, 0, 0.75);
-  --nav-active: #c95bf5;
-  --border-primary: #8a49a8;
-  --logo-primary: #ce5ff8;
-  --social-icon: #700c86;
-  --social-shadow: #801f95;
-  --preloader: #fafafa;
-  --bg-modal: #fafafa;
-  --modal-border: none;
-  --modal-close: #623686;
-  --modal-close-icon: #fff;
-  --drawer-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
-  --btn-primary-txt: #fff;
-  --tags-txt: #fff;
-  --toggle-theme: #000;
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter Variable', Inter, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+
+  --max-width: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section-space: clamp(4.5rem, 9vw, 8rem);
+
+  --paper: #f7f5ef;
+  --paper-raised: #fbfaf7;
+  --paper-sunken: #efece4;
+  --ink: #101820;
+  --ink-soft: #33414d;
+  --muted: #5f6b76;
+  --rule: rgba(16, 24, 32, 0.12);
+  --rule-strong: rgba(16, 24, 32, 0.24);
+  --accent: #0f766e;
+  --accent-strong: #0b5d57;
+  --accent-soft: #d9efeb;
+  --accent-2: #4338ca;
+  --accent-2-soft: #e6e4fb;
+  --highlight: #b45309;
+  --surface-glass: rgba(251, 250, 247, 0.82);
+  --shadow-sm: 0 1px 2px rgba(16, 24, 32, 0.05);
+  --shadow: 0 18px 50px rgba(16, 24, 32, 0.08);
+  --shadow-lg: 0 32px 80px rgba(16, 24, 32, 0.12);
+  --grid: rgba(16, 24, 32, 0.055);
+  --selection: rgba(15, 118, 110, 0.2);
+  --code-bg: #101820;
+  --code-text: #e8eef5;
+  --backdrop: rgba(16, 24, 32, 0.42);
+  --scrollbar: rgba(16, 24, 32, 0.22);
+  --scrollbar-hover: rgba(16, 24, 32, 0.38);
 }
 
-.dark {
-  --txt: #fff;
-  --txt-secondary: #cd5ff8;
-  --txt-sec-darcker: #cd5ff8;
-  --bg-layout-home: linear-gradient(to left, RGB(27 20 41), RGB(20 15 35));
-  --bg-home-section-main: linear-gradient(to bottom left, rgba(17, 16, 16, 0.678), rgba(12, 10, 22, 0.863)), url(../assets/home-bg.jpg);
-  --bg-layout-base: #100D19;
-  --bg-primary: #181a27;
-  --bg: #623686;
-  --bg-active: rgba(109,32,197,.84);
-  --bg-header: rgba(33,32,56,0.84);
-  --bg-footer: #0a0416;
-  --backdrop: rgba(0, 0, 0, 0.75);
-  --nav-active: #c95bf5;
-  --border-primary: #8a49a8;
-  --logo-primary: #ce5ff8;
-  --social-icon: #700c86;
-  --social-shadow: #801f95;
-  --preloader: #0c0513;
-  --bg-modal: #100D19;
-  --modal-border: 1px solid rgba(0,0,0,.125);
-  --modal-close: #623686;
-  --modal-close-icon: #fff;
-  --drawer-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  --btn-primary-txt: #fff;
-  --tags-txt: #fff;
-  --toggle-theme: #fff;
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --paper: #0a1118;
+  --paper-raised: #0f1a24;
+  --paper-sunken: #071018;
+  --ink: #e8eef5;
+  --ink-soft: #b7c3cf;
+  --muted: #8393a3;
+  --rule: rgba(232, 238, 245, 0.12);
+  --rule-strong: rgba(232, 238, 245, 0.24);
+  --accent: #2dd4bf;
+  --accent-strong: #5eead4;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --accent-2: #818cf8;
+  --accent-2-soft: rgba(129, 140, 248, 0.12);
+  --highlight: #fbbf24;
+  --surface-glass: rgba(15, 26, 36, 0.82);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 32px 80px rgba(0, 0, 0, 0.45);
+  --grid: rgba(232, 238, 245, 0.055);
+  --selection: rgba(45, 212, 191, 0.25);
+  --code-bg: #050b10;
+  --code-text: #d8e4ef;
+  --backdrop: rgba(0, 0, 0, 0.62);
+  --scrollbar: rgba(232, 238, 245, 0.2);
+  --scrollbar-hover: rgba(232, 238, 245, 0.36);
 }

@@ -1,16 +1,21 @@
-import { routes } from '../../routes/BaseRoutes';
 import { Link } from 'react-router';
+import s from './Logo.module.scss';
 
-const Logo = ({ className }) => {
-  const name = "Suhas Pindiproli";
+const Logo = ({ className = '' }) => {
   return (
-    <div className={className}>
-      <Link to={routes.HOME} aria-label="site logo">
-        <span>
-          {name}
-        </span>
-      </Link>
-    </div>
+    <Link
+      to="/"
+      className={`${s.logo} ${className}`.trim()}
+      aria-label="Suhas Pindiproli — home"
+    >
+      <span className={s.mark} aria-hidden="true">
+        SP
+      </span>
+      <span className={s.name}>
+        <span>Suhas</span>
+        <span>Pindiproli</span>
+      </span>
+    </Link>
   );
 };
 

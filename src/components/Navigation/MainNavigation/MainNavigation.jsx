@@ -1,45 +1,82 @@
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
+import { AiFillGithub } from 'react-icons/ai';
 import s from './MainNavigation.module.scss';
-import { useState } from 'react';
-import Media from 'react-media';
 import NavLinks from '../NavLinks/NavLinks';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Burger from '../Burger/Burger';
 import BtnToggleTheme from '../../BtnToggleTheme/BtnToggleTheme';
 import Logo from '../../Logo/Logo';
+import user from '../../../data/userOptions';
 
 const MainNavigation = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const location = useLocation();
 
-  const toggleDrawer = () => {
-    setIsDrawerOpen((prev) => !prev);
-  };
+  useEffect(() => {
+    setIsDrawerOpen(false);
+  }, [location.pathname]);
+
+  const closeDrawer = () => setIsDrawerOpen(false);
+  const toggleDrawer = () => setIsDrawerOpen((open) => !open);
 
   return (
-    <>
-      <Logo className={s.desktop} />
+    <div className={s.navigation}>
+      <Logo className={s.logo} />
 
-      <nav className={s.desktop}>
+      <nav className={s.desktop} aria-label="Primary navigation">
         <NavLinks />
       </nav>
 
-      <Media query={{ maxWidth: 768 }}>
-        {() => (
-          <>
-            <Burger onClick={toggleDrawer} />
+      <div className={s.actions}>
+        <BtnToggleTheme />
+        <a
+          className={s.github}
+          href={user.github}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub profile"
+        >
+          <AiFillGithub />
+        </a>
+        <Burger
+          onClick={toggleDrawer}
+          open={isDrawerOpen}
+          controls="mobile-navigation"
+        />
+      </div>
 
-            <Logo className={s.mobile} />
-
-            <BtnToggleTheme className={s.mobile} />
-          </>
-        )}
-      </Media>
-
-      <SideDrawer show={isDrawerOpen} onClose={toggleDrawer}>
-        <nav className={s.navigationDrawerNav}>
-          <NavLinks />
+      <SideDrawer
+        show={isDrawerOpen}
+        onClose={closeDrawer}
+        id="mobile-navigation"
+      >
+        <nav className={s.drawerNav} aria-label="Mobile navigation">
+          <NavLinks onNavigate={closeDrawer} />
         </nav>
+
+        <div className={s.drawerFooter}>
+          <a
+            className={s.drawerLink}
+            href={user.github}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiFillGithub aria-hidden="true" />
+            GitHub
+          </a>
+          <a
+            className={s.drawerLink}
+            href={user.linkedIn}
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+          <p className={s.drawerLocation}>Santa Clara, California</p>
+        </div>
       </SideDrawer>
-    </>
+    </div>
   );
 };
 

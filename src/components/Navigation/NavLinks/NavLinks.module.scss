@@ -1,71 +1,75 @@
-.navBar {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
+  gap: clamp(1.1rem, 2.4vw, 2.2rem);
 }
 
-.navBar li {
-  padding: .2rem 1.5rem;
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 200ms ease;
 }
 
-.navBar a {
-  font-size: 1.2rem;
-  color: var(--txt);
-  text-decoration: none;
-  transition: all 0.35s ease-out 0s;
-  &:after {
-    content: "";
-    position: relative;
-    display: block;
-    height: 5px;
-    border-radius: 16px;
-    background: var(--nav-active);
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    transition: all 0.35s ease-out 0s;
-    max-width: 0;
-  }
-
-
-  svg {
-    position: relative;
-    top: .2rem;
-    margin: 1px 5px 1px 0;
-  }
+.link::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -0.45rem;
+  left: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 220ms ease;
 }
 
-@media (max-width: 768px) {
-  .navBar {
+.link:hover,
+.active {
+  color: var(--ink);
+}
+
+.link:hover::after,
+.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.index {
+  color: var(--accent);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 860px) {
+  .links {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    gap: 0.4rem;
   }
-  .navBar li {
-    padding: .65rem 1.5rem;
+
+  .link {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 8vw, 3.4rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    color: var(--ink);
   }
-  .navBar a {
-    font-size: 22px;
+
+  .index {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
   }
-}
 
-
-@media (min-width: 768px) {
-  .navBar a {
-    &:hover, &:active, &[class="active"] {
-      &:after {
-        max-width: 100%;
-      }
-    }
-
-    svg {
-      position: relative;
-      top: .2rem;
-      margin: 1px 5px 1px 0;
-    }
+  .link::after {
+    display: none;
   }
 }

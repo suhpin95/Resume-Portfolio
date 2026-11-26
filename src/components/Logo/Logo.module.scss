@@ -1,1 +1,48 @@
-:export { logoPrimary: var(--logo-primary); }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 50%;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: border-color 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.logo:hover .mark {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: rotate(-6deg);
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.name span:last-child {
+  color: var(--muted);
+}
+
+@media (max-width: 520px) {
+  .name {
+    display: none;
+  }
+}

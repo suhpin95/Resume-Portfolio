@@ -1,4 +1,4 @@
-@import '../../../styles/keyframes';
+@use '../../../styles/keyframes';
 
 .content {
   margin: 0 auto;
@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: var(--theme-color);
+  color: var(--ink);
   text-align: left;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .mainName {
-  color: var(--txt-sec-darcker);
+  color: var(--accent);
   text-transform: uppercase;
 
 }

@@ -1,11 +1,11 @@
 import s from './Projects.module.scss';
 import projects from '../../data/projects';
-import BaseLayout from '../../layouts/BaseLayout/BaseLayout';
+import RootLayout from '../../layouts/RootLayout/RootLayout';
 import ProjectCard from './ProjectCard/ProjectCard';
 
 const Projects = () => {
   return (
-    <BaseLayout>
+    <RootLayout>
       <div className={s.content}>
         <h1 className={s.title}>
           My Recent <strong className={s.purple}>Works</strong>
@@ -20,7 +20,7 @@ const Projects = () => {
           ))}
         </ul>
       </div>
-    </BaseLayout>
+    </RootLayout>
   );
 };
 

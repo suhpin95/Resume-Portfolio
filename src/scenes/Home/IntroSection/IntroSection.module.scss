@@ -8,7 +8,7 @@
 }
 
 .introduction {
-  color: var(--txt);
+  color: var(--ink);
   padding: 5rem 0 2rem;
   display: flex;
   justify-content: space-around;
@@ -39,7 +39,7 @@
 }
 
 .purple {
-  color: var(--txt-secondary);
+  color: var(--accent);
 }
 
 .introSocial {
@@ -81,7 +81,7 @@
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
-  color: var(--social-icon);
+  color: var(--ink);
   background: hsla(0,0%,100%,.972);
   border-radius: 50%;
   transition: .5s;
@@ -89,5 +89,5 @@
 
 .socialIcon:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px var(--social-shadow);
+  box-shadow: 0 0 15px var(--shadow);
 }

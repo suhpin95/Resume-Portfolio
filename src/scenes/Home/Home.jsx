@@ -1,17 +1,17 @@
 import MainSection from './MainSection/MainSection';
 import IntroSection from './IntroSection/IntroSection';
-import HomeLayout from '../../layouts/HomeLayout/HomeLayout';
+import RootLayout from '../../layouts/RootLayout/RootLayout';
 import SectionBG from '../../components/UIElements/SectionBG/SectionBG';
 
 const Home = () => {
   return (
-    <HomeLayout>
+    <RootLayout>
       <SectionBG>
         <MainSection />
       </SectionBG>
 
       <IntroSection />
-    </HomeLayout>
+    </RootLayout>
   );
 };
 

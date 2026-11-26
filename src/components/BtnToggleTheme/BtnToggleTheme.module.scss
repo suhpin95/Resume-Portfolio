@@ -1,5 +1,17 @@
-.toggleTheme {
-  color: var(--toggle-theme);
-  width: 27px;
-  height: auto;
+.toggle {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  color: var(--muted);
+  font-size: 1rem;
+  transition: color 200ms ease, border-color 200ms ease, background-color 200ms ease;
+}
+
+.toggle:hover {
+  border-color: var(--rule-strong);
+  background: var(--paper-sunken);
+  color: var(--ink);
 }

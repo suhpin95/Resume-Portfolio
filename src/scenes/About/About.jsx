@@ -1,12 +1,12 @@
 import s from './About.module.scss';
-import BaseLayout from '../../layouts/BaseLayout/BaseLayout';
+import RootLayout from '../../layouts/RootLayout/RootLayout';
 import AboutTextCard from './AboutTextCard/AboutTextCard';
 import TechSkills from './TechSkills/TechSkills';
 import GithubActivity from './GithubActivity/GithubActivity';
 
 const About = () => {
   return (
-    <BaseLayout>
+    <RootLayout>
       <div className={s.content}>
         <div className={s.about}>
           <div className={s.aboutDescription}>
@@ -28,7 +28,7 @@ const About = () => {
         </h2>
         <GithubActivity />
       </div>
-    </BaseLayout>
+    </RootLayout>
   );
 };
 

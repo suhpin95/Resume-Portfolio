@@ -1,50 +1,47 @@
-import {
-  createContext,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react';
+import { createContext, useCallback, useEffect, useMemo, useState } from 'react';
 
-const DARK_LOCAL_STORAGE_KEY = 'dark';
+const STORAGE_KEY = 'theme';
+
+const getInitialTheme = () => {
+  if (typeof window === 'undefined') return 'light';
+
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  if (stored === 'dark' || stored === 'light') return stored;
+
+  return 'light';
+};
 
 export const ThemeContext = createContext({
-  dark: true,
-  toggle: () => {},
+  theme: 'light',
+  dark: false,
+  toggleTheme: () => {},
 });
 
 export const ThemeProvider = ({ children }) => {
-  const [dark, setDark] = useState(true); // dark by default
-
-  const toggleTheme = useCallback(() => {
-    setDark((prevDark) => {
-      localStorage.setItem(
-        DARK_LOCAL_STORAGE_KEY,
-        JSON.stringify(!prevDark),
-      );
-
-      document.body.classList.toggle('dark', !prevDark);
-      document.body.classList.toggle('light', prevDark);
-
-      return !prevDark;
-    });
-  }, []);
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
-    const localValue = JSON.parse(
-      localStorage.getItem(DARK_LOCAL_STORAGE_KEY),
-    );
+    const root = document.documentElement;
+    root.dataset.theme = theme;
+    root.classList.toggle('dark', theme === 'dark');
+    root.classList.toggle('light', theme === 'light');
+    root.style.colorScheme = theme;
+    localStorage.setItem(STORAGE_KEY, theme);
 
-    if (localValue === null) {
-      document.body.classList.add('dark');
-    } else {
-      setDark(localValue);
-      document.body.classList.add(localValue ? 'dark' : 'light');
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute('content', theme === 'dark' ? '#0a1118' : '#f7f5ef');
     }
+  }, [theme]);
+
+  const toggleTheme = useCallback(() => {
+    setTheme((current) => (current === 'dark' ? 'light' : 'dark'));
   }, []);
 
-  return (
-    <ThemeContext.Provider value={{ dark, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+  const value = useMemo(
+    () => ({ theme, dark: theme === 'dark', toggleTheme }),
+    [theme, toggleTheme],
   );
+
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 };

@@ -1,14 +1,14 @@
 import s from './Resume.module.scss';
 import FilesIcon from '../../assets/resume-files.svg?react';
 import DownloadIcon from '../../assets/download.svg?react';
-import BaseLayout from '../../layouts/BaseLayout/BaseLayout';
+import RootLayout from '../../layouts/RootLayout/RootLayout';
 import Button from '../../components/UIElements/Button/Button';
 
 const resumeLink = `${import.meta.env.BASE_URL}Suhas_Pindiproli_Sr_SWE_Resume.pdf`;
 
 const Resume = () => {
   return (
-    <BaseLayout>
+    <RootLayout>
       <div className={s.content}>
         <div className={s.header}>
           <h1 className={s.title}>
@@ -40,7 +40,7 @@ const Resume = () => {
           </object>
         </div>
       </div>
-    </BaseLayout>
+    </RootLayout>
   );
 };
 
