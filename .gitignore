@@ -31,3 +31,4 @@ yarn-error.log*
 bun-debug.log*
 
 .idea
+/docs/
