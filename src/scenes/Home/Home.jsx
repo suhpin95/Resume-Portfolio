@@ -8,7 +8,10 @@ import SelectedWork from './SelectedWork/SelectedWork';
 
 const Home = () => {
   return (
-    <RootLayout>
+    <RootLayout
+      title="Suhas Pindiproli - Distributed Systems & AI"
+      description="Senior software engineer building reliable distributed systems, identity platforms, and AI infrastructure."
+    >
       <Hero />
       <Metrics />
       <FocusAreas />

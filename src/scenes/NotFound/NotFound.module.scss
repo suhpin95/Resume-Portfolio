@@ -1,0 +1,25 @@
+.section {
+  display: grid;
+  min-height: 65vh;
+  align-items: center;
+}
+
+.section h1 {
+  max-width: 13ch;
+  margin-top: 1.25rem;
+}
+
+.description {
+  max-width: 48ch;
+  margin-top: 1.25rem;
+  color: var(--muted);
+}
+
+.homeLink {
+  display: inline-flex;
+  gap: 0.6rem;
+  margin-top: 2rem;
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}

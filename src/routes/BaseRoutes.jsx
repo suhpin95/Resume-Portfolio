@@ -6,6 +6,7 @@ const Home = lazy(() => import('../scenes/Home/Home'));
 const About = lazy(() => import('../scenes/About/About'));
 const Resume = lazy(() => import('../scenes/Resume/Resume'));
 const Work = lazy(() => import('../scenes/Projects/Projects'));
+const NotFound = lazy(() => import('../scenes/NotFound/NotFound'));
 
 export const routes = {
   HOME: '/',
@@ -21,7 +22,7 @@ const BaseRoutes = () => {
       <Route path={routes.WORK} element={<Work />} />
       <Route path={routes.ABOUT} element={<About />} />
       <Route path={routes.RESUME} element={<Resume />} />
-      <Route path="*" element={<Home />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
