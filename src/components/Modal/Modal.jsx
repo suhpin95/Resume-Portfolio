@@ -1,8 +1,8 @@
 import s from './Modal.module.scss';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { CSSTransition } from 'react-transition-group';
-import { ReactComponent as ModalCloseIcon } from '../../assets/modal-close.svg';
+import ModalCloseIcon from '../../assets/modal-close.svg?react';
 import Backdrop from '../UIElements/Backdrop/Backdrop';
 
 const Modal = ({ children, show, onClose }) => {

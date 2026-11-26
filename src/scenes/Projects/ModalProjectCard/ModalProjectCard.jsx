@@ -3,7 +3,7 @@ import projects from '../../../data/projects';
 import { BiLinkExternal } from 'react-icons/bi';
 import Modal from '../../../components/Modal/Modal';
 import Button from '../../../components/UIElements/Button/Button';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import { useModal } from '../../../hooks/modalHook';
 import { LazyLoadImage } from 'react-lazy-load-image-component';

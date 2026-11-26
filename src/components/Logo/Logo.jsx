@@ -1,5 +1,5 @@
 import { routes } from '../../routes/BaseRoutes';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const Logo = ({ className }) => {
   const name = "Suhas Pindiproli";

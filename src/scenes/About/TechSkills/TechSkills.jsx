@@ -2,9 +2,8 @@ import s from './TechSkills.module.scss';
 import {
   DiNodejs, DiGit, DiPython, DiJava, DiJenkins, DiJira, DiPostgresql,
 } from 'react-icons/di';
-import {
-  SiAmazonaws, SiSpring,
-} from 'react-icons/si';
+import { FaAws } from 'react-icons/fa6';
+import { SiSpring } from 'react-icons/si';
 
 const TechSkills = () => {
   return (
@@ -25,7 +24,7 @@ const TechSkills = () => {
         <SiSpring />
       </a>
       <a href={'https://docs.aws.amazon.com/'} className={s.techIcon} target="_blank" rel="noreferrer">
-        <SiAmazonaws />
+        <FaAws />
       </a>
       <a href={'https://www.jenkins.io/doc/'} className={s.techIcon} target="_blank" rel="noreferrer">
         <DiJenkins />
