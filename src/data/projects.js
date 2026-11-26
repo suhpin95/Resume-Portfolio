@@ -1,3 +1,25 @@
+/**
+ * @typedef {{value: string, label: string}} ProjectImpact
+ * @typedef {{
+ *   id: string,
+ *   title: string,
+ *   category: string,
+ *   year: string,
+ *   role: string,
+ *   featured: boolean,
+ *   openSource: boolean,
+ *   summary: string,
+ *   description: string,
+ *   problem: string,
+ *   approach: string[],
+ *   tradeoffs: string[],
+ *   impact: ProjectImpact[],
+ *   technologies: string[],
+ *   links: {repo?: string}
+ * }} Project
+ */
+
+/** @type {Project[]} */
 const projects = [
   {
     id: 'llm-inference-gateway',
@@ -49,7 +71,7 @@ const projects = [
     id: 'oauth2-authorization-platform',
     title: 'OAuth2 Authorization Platform',
     category: 'Identity & security',
-    year: '2024 — 2026',
+    year: '2024 - 2026',
     role: 'Design + rollout',
     featured: true,
     openSource: false,
@@ -130,7 +152,7 @@ const projects = [
     id: 'kubernetes-observability',
     title: 'Kubernetes Observability Platform',
     category: 'Observability',
-    year: '2024 — 2026',
+    year: '2024 - 2026',
     role: 'Platform adoption',
     featured: false,
     openSource: false,
@@ -168,6 +190,16 @@ const projects = [
 ];
 
 export const featuredProjects = projects.filter((project) => project.featured);
+
+export const projectCategories = [
+  'All',
+  ...new Set(projects.map((project) => project.category)),
+];
+
+export const filterProjectsByCategory = (category) =>
+  category === 'All'
+    ? projects
+    : projects.filter((project) => project.category === category);
 
 export const getProjectById = (id) => projects.find((project) => project.id === id);
 

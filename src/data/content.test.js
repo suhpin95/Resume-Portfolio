@@ -1,7 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import experience from './experience';
 import profile from './profile';
-import projects, { featuredProjects } from './projects';
+import projects, {
+  featuredProjects,
+  filterProjectsByCategory,
+  projectCategories,
+} from './projects';
 
 describe('portfolio content', () => {
   it('exposes a complete profile', () => {
@@ -24,6 +28,18 @@ describe('portfolio content', () => {
       expect(project.impact.length).toBeGreaterThan(0);
       expect(project.technologies.length).toBeGreaterThan(0);
     }
+  });
+
+  it('filters projects by category while keeping the all-projects option intact', () => {
+    const category = projectCategories.find((item) => item !== 'All');
+
+    expect(filterProjectsByCategory('All')).toEqual(projects);
+    expect(filterProjectsByCategory(category).length).toBeGreaterThan(0);
+    expect(
+      filterProjectsByCategory(category).every(
+        (project) => project.category === category,
+      ),
+    ).toBe(true);
   });
 
   it('provides experience entries with highlights', () => {
