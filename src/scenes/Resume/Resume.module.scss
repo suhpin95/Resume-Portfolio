@@ -1,5 +1,7 @@
 .content {
-  padding: 9rem 9rem 3rem;
+  width: min(100% - (2 * var(--gutter)), 56rem);
+  margin-inline: auto;
+  padding: 8rem 0 3rem;
 }
 
 .header {
@@ -33,7 +35,86 @@
 
 .pdfWrapper {
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--rule);
+}
+
+.summary {
+  margin-block: clamp(3rem, 7vw, 5rem);
+}
+
+.summary h2 {
+  max-width: 20ch;
+  margin-top: 0.8rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.profileSummary {
+  max-width: 72ch;
+  margin-top: 1rem;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  border-block: 1px solid var(--rule);
+  padding-block: 1.2rem;
+}
+
+.facts dt,
+.expertise h3,
+.education h3 {
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.facts dd {
+  margin-top: 0.35rem;
+  color: var(--ink);
+  font-size: 0.87rem;
+}
+
+.expertise,
+.education {
+  margin-top: 2rem;
+}
+
+.expertise ul,
+.education ul {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.expertise li,
+.education li {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.expertise li strong,
+.education li strong {
+  font-size: 0.9rem;
+}
+
+.expertise li span,
+.education li span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.previewTitle {
+  margin-bottom: 1rem;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
 }
 
 .downloadText {
@@ -56,13 +137,17 @@
 
   .pdfWrapper {
     width: 100%;
-    padding: 2rem 0;
+    padding: 1rem 0;
+  }
+
+  .pdfWrapper object {
+    height: 65vh;
   }
 }
 
 @media (max-width: 925px) {
   .content {
-    padding: 9rem 3rem 1rem;
+    padding-top: 7rem;
   }
   .title {
     font-size: 4rem;
