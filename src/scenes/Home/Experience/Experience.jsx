@@ -8,10 +8,9 @@ const Experience = () => {
     <section className={`section ${s.section}`} aria-labelledby="experience-title">
       <div className="container">
         <SectionHeading
-          index="03"
           eyebrow="Experience"
           title={<span id="experience-title">Where I've built.</span>}
-          description="Six years across financial risk, identity, retail, and biomedical platforms — mostly in Java and Go."
+          description="Six years across financial risk, identity, retail, and biomedical platforms - mostly in Java and Go."
         />
 
         <ol className={s.timeline}>
