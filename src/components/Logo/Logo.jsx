@@ -3,11 +3,7 @@ import s from './Logo.module.scss';
 
 const Logo = ({ className = '' }) => {
   return (
-    <Link
-      to="/"
-      className={`${s.logo} ${className}`.trim()}
-      aria-label="Suhas Pindiproli — home"
-    >
+    <Link to="/" className={`${s.logo} ${className}`.trim()}>
       <span className={s.mark} aria-hidden="true">
         SP
       </span>

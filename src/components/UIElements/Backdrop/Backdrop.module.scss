@@ -1,8 +1,14 @@
+@use "../../../styles/keyframes";
+
 .backdrop {
   position: fixed;
   inset: 0;
   z-index: 180;
+  width: 100%;
+  border: 0;
+  padding: 0;
   background: var(--backdrop);
   backdrop-filter: blur(3px);
   animation: fade-in 200ms ease both;
+  cursor: default;
 }

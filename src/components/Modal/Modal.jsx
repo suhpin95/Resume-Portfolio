@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import s from './Modal.module.scss';
 import Backdrop from '../UIElements/Backdrop/Backdrop';
+import s from './Modal.module.scss';
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
@@ -29,9 +29,9 @@ const Modal = ({ children, show, onClose, labelledBy }) => {
 
       if (event.key !== 'Tab' || !modalRef.current) return;
 
-      const focusable = Array.from(
-        modalRef.current.querySelectorAll(FOCUSABLE),
-      ).filter((element) => element.getClientRects().length > 0);
+      const focusable = Array.from(modalRef.current.querySelectorAll(FOCUSABLE)).filter(
+        (element) => element.getClientRects().length > 0,
+      );
 
       if (focusable.length === 0) return;
 

@@ -17,9 +17,7 @@ const NavLinks = ({ onNavigate, className = '' }) => {
             to={link.to}
             end={link.end}
             onClick={onNavigate}
-            className={({ isActive }) =>
-              `${s.link} ${isActive ? s.active : ''}`.trim()
-            }
+            className={({ isActive }) => `${s.link} ${isActive ? s.active : ''}`.trim()}
           >
             <span className={s.index} aria-hidden="true">
               0{index + 1}

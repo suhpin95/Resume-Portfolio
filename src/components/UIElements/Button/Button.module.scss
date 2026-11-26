@@ -13,8 +13,12 @@
   letter-spacing: 0.08em;
   line-height: 1.2;
   text-transform: uppercase;
-  transition: background-color 200ms ease, border-color 200ms ease,
-    color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .button:hover {

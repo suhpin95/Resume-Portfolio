@@ -1,25 +1,33 @@
-import s from './Projects.module.scss';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import SectionHeading from '../../components/SectionHeading/SectionHeading';
+import Reveal from '../../components/UIElements/Reveal/Reveal';
 import projects from '../../data/projects';
 import RootLayout from '../../layouts/RootLayout/RootLayout';
-import ProjectCard from './ProjectCard/ProjectCard';
+import s from './Projects.module.scss';
 
 const Projects = () => {
   return (
     <RootLayout>
-      <div className={s.content}>
-        <h1 className={s.title}>
-          My Recent <strong className={s.purple}>Works</strong>
-        </h1>
-        <p className={s.subtitle}>
-          Here are a few projects I've worked on recently.
-        </p>
+      <section className={`section ${s.section}`} aria-labelledby="work-title">
+        <div className="container">
+          <SectionHeading
+            index="Work"
+            eyebrow="Selected projects"
+            title={<span id="work-title">Systems, tradeoffs, outcomes.</span>}
+            description="Platform work and open-source projects described by the problem, the approach, and what changed in production."
+          />
 
-        <ul className={s.projects}>
-          {projects.map((props) => (
-            <ProjectCard key={props.id} {...props} />
-          ))}
-        </ul>
-      </div>
+          <ul className={s.grid}>
+            {projects.map((project, index) => (
+              <li key={project.id}>
+                <Reveal delay={index * 70} className={s.cardWrap}>
+                  <ProjectCard project={project} index={index} />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </RootLayout>
   );
 };

@@ -11,21 +11,19 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 78%);
 }
 
 .backdrop::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-      circle at 18% 8%,
-      var(--accent-soft),
-      transparent 34%
-    ),
+  background:
+    radial-gradient(circle at 18% 8%, var(--accent-soft), transparent 34%),
     radial-gradient(circle at 84% 18%, var(--accent-2-soft), transparent 30%);
   opacity: 0.7;
 }

@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router';
 import { AiFillGithub } from 'react-icons/ai';
-import s from './MainNavigation.module.scss';
-import NavLinks from '../NavLinks/NavLinks';
-import SideDrawer from '../SideDrawer/SideDrawer';
-import Burger from '../Burger/Burger';
+import { useLocation } from 'react-router';
+import user from '../../../data/userOptions';
 import BtnToggleTheme from '../../BtnToggleTheme/BtnToggleTheme';
 import Logo from '../../Logo/Logo';
-import user from '../../../data/userOptions';
+import Burger from '../Burger/Burger';
+import NavLinks from '../NavLinks/NavLinks';
+import SideDrawer from '../SideDrawer/SideDrawer';
+import s from './MainNavigation.module.scss';
 
 const MainNavigation = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const location = useLocation();
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: close the drawer whenever the route changes
   useEffect(() => {
     setIsDrawerOpen(false);
   }, [location.pathname]);
@@ -39,29 +40,16 @@ const MainNavigation = () => {
         >
           <AiFillGithub />
         </a>
-        <Burger
-          onClick={toggleDrawer}
-          open={isDrawerOpen}
-          controls="mobile-navigation"
-        />
+        <Burger onClick={toggleDrawer} open={isDrawerOpen} controls="mobile-navigation" />
       </div>
 
-      <SideDrawer
-        show={isDrawerOpen}
-        onClose={closeDrawer}
-        id="mobile-navigation"
-      >
+      <SideDrawer show={isDrawerOpen} onClose={closeDrawer} id="mobile-navigation">
         <nav className={s.drawerNav} aria-label="Mobile navigation">
           <NavLinks onNavigate={closeDrawer} />
         </nav>
 
         <div className={s.drawerFooter}>
-          <a
-            className={s.drawerLink}
-            href={user.github}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a className={s.drawerLink} href={user.github} target="_blank" rel="noreferrer">
             <AiFillGithub aria-hidden="true" />
             GitHub
           </a>

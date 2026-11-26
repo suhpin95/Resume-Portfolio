@@ -39,7 +39,9 @@
   color: var(--ink);
   font-size: 1.4rem;
   line-height: 1;
-  transition: border-color 200ms ease, background-color 200ms ease;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease;
 }
 
 .close:hover {

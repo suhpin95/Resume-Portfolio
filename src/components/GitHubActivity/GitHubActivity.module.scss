@@ -1,0 +1,18 @@
+.wrapper {
+  overflow-x: auto;
+  padding-block: 0.5rem;
+  color: var(--ink-soft);
+}
+
+.wrapper :global(.react-activity-calendar) {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+}
+
+.wrapper :global(.react-activity-calendar__legend-colors) {
+  gap: 2px;
+}
+
+.wrapper :global(.react-activity-calendar text) {
+  fill: var(--muted);
+}

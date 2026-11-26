@@ -1,8 +1,8 @@
-import { Link } from 'react-router';
 import { AiFillGithub } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa6';
-import s from './Footer.module.scss';
+import { Link } from 'react-router';
 import user from '../../data/userOptions';
+import s from './Footer.module.scss';
 
 const Footer = () => {
   const year = new Date().getFullYear();

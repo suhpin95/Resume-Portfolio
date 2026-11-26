@@ -30,7 +30,10 @@
   border-radius: 50%;
   color: var(--muted);
   font-size: 1.05rem;
-  transition: color 200ms ease, border-color 200ms ease, background-color 200ms ease;
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease;
 }
 
 .github:hover {

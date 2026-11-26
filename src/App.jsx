@@ -1,8 +1,8 @@
 import './styles/main.scss';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router';
-import BaseRoutes from './routes/BaseRoutes';
 import Preloader from './components/UIElements/Preloader/Preloader';
+import BaseRoutes from './routes/BaseRoutes';
 
 const App = () => {
   return (

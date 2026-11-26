@@ -2,13 +2,12 @@ import s from './Backdrop.module.scss';
 
 const Backdrop = ({ onClick }) => {
   return (
-    <div
+    <button
+      type="button"
       className={s.backdrop}
       onClick={onClick}
-      onKeyDown={(event) => {
-        if (event.key === 'Escape') onClick?.();
-      }}
-      role="presentation"
+      aria-label="Close overlay"
+      tabIndex={-1}
     />
   );
 };

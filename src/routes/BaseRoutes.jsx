@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router';
+
 //scenes
 const Home = lazy(() => import('../scenes/Home/Home'));
 const About = lazy(() => import('../scenes/About/About'));

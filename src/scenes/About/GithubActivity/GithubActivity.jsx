@@ -1,6 +1,6 @@
-import s from './GithubActivity.module.scss';
 import { GitHubCalendar } from 'react-github-calendar';
 import user from '../../../data/userOptions';
+import s from './GithubActivity.module.scss';
 
 const GithubActivity = () => {
   return (

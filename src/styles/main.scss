@@ -1,6 +1,5 @@
-@use 'theme';
-@use 'keyframes';
-@use 'transitions';
+@use "theme";
+@use "transitions";
 
 :root {
   font-family: var(--font-sans);
@@ -31,7 +30,9 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   line-height: 1.6;
-  transition: background-color 300ms ease, color 300ms ease;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
 }
 
 #root {
@@ -159,7 +160,7 @@ ol {
 }
 
 .eyebrow::before {
-  content: '';
+  content: "";
   width: 1.75rem;
   height: 1px;
   background: currentColor;
@@ -186,7 +187,9 @@ ol {
   text-decoration-color: var(--rule-strong);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
-  transition: text-decoration-color 200ms ease, color 200ms ease;
+  transition:
+    text-decoration-color 200ms ease,
+    color 200ms ease;
 }
 
 .link-underline:hover {
@@ -195,7 +198,8 @@ ol {
 }
 
 .paper-grid {
-  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 56px 56px;
 }

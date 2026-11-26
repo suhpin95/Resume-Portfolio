@@ -1,10 +1,13 @@
+import profile from './profile';
+
 /**
- * Will be using this to populate the values into the header and footer sections
- * @type {{github: string, linkedIn: string}}
+ * Shared social/profile links used by legacy components.
+ * @type {{github: string, linkedIn: string, githubUserName: string}}
  */
 const user = {
-  github: "https://github.com/suhpin95",
-  linkedIn: "https://www.linkedin.com/in/suhas-pindiproli/",
-  githubUserName:"suhpin95"
-}
+  github: profile.github,
+  linkedIn: profile.linkedin,
+  githubUserName: profile.githubUsername,
+};
+
 export default user;

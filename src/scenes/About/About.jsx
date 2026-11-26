@@ -1,8 +1,8 @@
-import s from './About.module.scss';
 import RootLayout from '../../layouts/RootLayout/RootLayout';
+import s from './About.module.scss';
 import AboutTextCard from './AboutTextCard/AboutTextCard';
-import TechSkills from './TechSkills/TechSkills';
 import GithubActivity from './GithubActivity/GithubActivity';
+import TechSkills from './TechSkills/TechSkills';
 
 const About = () => {
   return (
@@ -15,7 +15,6 @@ const About = () => {
             </h1>
             <AboutTextCard />
           </div>
-
         </div>
 
         <h2 className={s.skills}>

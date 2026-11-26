@@ -1,16 +1,20 @@
-import MainSection from './MainSection/MainSection';
-import IntroSection from './IntroSection/IntroSection';
 import RootLayout from '../../layouts/RootLayout/RootLayout';
-import SectionBG from '../../components/UIElements/SectionBG/SectionBG';
+import Contact from './Contact/Contact';
+import Experience from './Experience/Experience';
+import FocusAreas from './FocusAreas/FocusAreas';
+import Hero from './Hero/Hero';
+import Metrics from './Metrics/Metrics';
+import SelectedWork from './SelectedWork/SelectedWork';
 
 const Home = () => {
   return (
     <RootLayout>
-      <SectionBG>
-        <MainSection />
-      </SectionBG>
-
-      <IntroSection />
+      <Hero />
+      <Metrics />
+      <FocusAreas />
+      <SelectedWork />
+      <Experience />
+      <Contact />
     </RootLayout>
   );
 };

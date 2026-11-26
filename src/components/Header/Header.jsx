@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import s from './Header.module.scss';
+import { useEffect, useState } from 'react';
 import MainNavigation from '../Navigation/MainNavigation/MainNavigation';
+import s from './Header.module.scss';
 
 const Header = () => {
   const [highlighted, setHighlighted] = useState(false);

@@ -1,6 +1,6 @@
 import { FiMoon, FiSun } from 'react-icons/fi';
-import s from './BtnToggleTheme.module.scss';
 import { useThemeContext } from '../../hooks/themeHook/themeHook';
+import s from './BtnToggleTheme.module.scss';
 
 const BtnToggleTheme = ({ className = '' }) => {
   const { dark, toggleTheme } = useThemeContext();

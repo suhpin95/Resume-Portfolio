@@ -1,3 +1,5 @@
+@use "../../../styles/keyframes";
+
 .preloader {
   position: fixed;
   inset: 0;
@@ -33,7 +35,7 @@
 }
 
 .line::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--accent);

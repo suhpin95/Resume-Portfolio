@@ -9,7 +9,9 @@
   border-radius: 50%;
   padding: 0.65rem;
   background: transparent;
-  transition: border-color 200ms ease, background-color 200ms ease;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease;
 }
 
 .burger:hover {
@@ -22,7 +24,9 @@
   width: 100%;
   height: 1.5px;
   background: var(--ink);
-  transition: transform 220ms ease, opacity 160ms ease;
+  transition:
+    transform 220ms ease,
+    opacity 160ms ease;
   transform-origin: center;
 }
 

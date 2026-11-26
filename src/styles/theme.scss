@@ -1,14 +1,17 @@
 :root,
-[data-theme='light'] {
+[data-theme="light"] {
   color-scheme: light;
 
-  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Inter Variable', Inter, system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", Inter, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
 
   --max-width: 1200px;
   --gutter: clamp(1.25rem, 4vw, 3rem);
   --section-space: clamp(4.5rem, 9vw, 8rem);
+  --radius-sm: 0.4rem;
+  --radius: 0.85rem;
+  --radius-lg: 1.4rem;
 
   --paper: #f7f5ef;
   --paper-raised: #fbfaf7;
@@ -37,7 +40,7 @@
   --scrollbar-hover: rgba(16, 24, 32, 0.38);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   color-scheme: dark;
 
   --paper: #0a1118;

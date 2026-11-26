@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import s from './SideDrawer.module.scss';
 import Backdrop from '../../UIElements/Backdrop/Backdrop';
+import s from './SideDrawer.module.scss';
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
@@ -25,9 +25,9 @@ const SideDrawer = ({ children, show, onClose, id }) => {
 
       if (event.key !== 'Tab' || !drawerRef.current) return;
 
-      const focusable = Array.from(
-        drawerRef.current.querySelectorAll(FOCUSABLE),
-      ).filter((element) => element.getClientRects().length > 0);
+      const focusable = Array.from(drawerRef.current.querySelectorAll(FOCUSABLE)).filter(
+        (element) => element.getClientRects().length > 0,
+      );
 
       if (focusable.length === 0) return;
 

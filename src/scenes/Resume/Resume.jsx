@@ -1,8 +1,8 @@
-import s from './Resume.module.scss';
-import FilesIcon from '../../assets/resume-files.svg?react';
 import DownloadIcon from '../../assets/download.svg?react';
-import RootLayout from '../../layouts/RootLayout/RootLayout';
+import FilesIcon from '../../assets/resume-files.svg?react';
 import Button from '../../components/UIElements/Button/Button';
+import RootLayout from '../../layouts/RootLayout/RootLayout';
+import s from './Resume.module.scss';
 
 const resumeLink = `${import.meta.env.BASE_URL}Suhas_Pindiproli_Sr_SWE_Resume.pdf`;
 

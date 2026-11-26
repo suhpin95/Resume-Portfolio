@@ -37,6 +37,32 @@
   font-size: 0.95rem;
 }
 
+.socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  color: var(--muted);
+  font-size: 1.05rem;
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease;
+}
+
+.socials a:where(:hover) {
+  border-color: var(--rule-strong);
+  background: var(--paper-sunken);
+  color: var(--ink);
+}
+
 .nav {
   display: flex;
   flex-direction: column;
@@ -52,30 +78,7 @@
   transition: color 200ms ease;
 }
 
-.nav a:hover {
-  color: var(--ink);
-}
-
-.socials {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.socials a {
-  display: grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid var(--rule);
-  border-radius: 50%;
-  color: var(--muted);
-  font-size: 1.05rem;
-  transition: color 200ms ease, border-color 200ms ease, background-color 200ms ease;
-}
-
-.socials a:hover {
-  border-color: var(--rule-strong);
-  background: var(--paper-sunken);
+.nav a:where(:hover) {
   color: var(--ink);
 }
 

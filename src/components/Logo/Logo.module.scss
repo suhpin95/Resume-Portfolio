@@ -17,7 +17,10 @@
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  transition: border-color 200ms ease, color 200ms ease, transform 200ms ease;
+  transition:
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
 }
 
 .logo:hover .mark {
